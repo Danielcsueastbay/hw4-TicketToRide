@@ -5,22 +5,27 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Daniel
  */
 public class DiscardPile {
-    //skelly code
-    public TrainCard [] discarded;
-    public DiscardPile(TrainCard [] usedTraincard) {
-        //initialize discard pile as equal to usedTrainCard in TrainCardDeck.java
-        
-    }
-    public void add() {
+    public ArrayList <TrainCard> discarded = new ArrayList();  //discarded cards list created/ininlalized
+    
+    public void add(TrainCardDeck tcd) {
         //put all discarded train cards back to train card deck when train deck is empty
+        for (TrainCard tc : discarded){
+            tcd.Traindeck.add(tc);
+        }
     }
-    public void remove(TrainCard [] discarded) {
+    
+    public void remove(TrainCard [] discard) {
         //move train cards from hand to discard pile;
+        for (TrainCard tc : discard){
+            discarded.add(tc);
+        }     
     }
-
 }
+
