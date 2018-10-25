@@ -5,13 +5,14 @@
  */
 package Model;
 import java.util.ArrayList;
-
 /**
  *
  * @author Daniel
  */
 public class TicketCardDeck {
+    
     public ArrayList<TicketCard> Ticketdeck = new ArrayList();    //ticket cards deck
+    
     public TicketCardDeck() {
         // create ticket cards and ticket deck
         Ticketdeck.add( 0, new TicketCard(0, 1, 1));
