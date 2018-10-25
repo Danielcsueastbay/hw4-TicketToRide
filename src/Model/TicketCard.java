@@ -11,9 +11,10 @@ package Model;
  */
 
 public class TicketCard {
-    //skelly code of TicketCard.java
+    
     public int value;    //stores card’s value
     public int loc1, loc2;    //stores int location
+    
     public TicketCard(){
         loc1 = 1;
         loc2 = 2;
