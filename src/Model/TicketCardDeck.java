@@ -40,7 +40,7 @@ public class TicketCardDeck {
         TicketCard temp = Ticketdeck.get(0);
         int position = 0, rand;
         for (int i = 1; i < (Ticketdeck.size()-1); i++){
-            rand = ((int) (Math.random() * 100) % (Ticketdeck.size() - position)) + position;
+            rand = ((int) (Math.random() * 100) % (Ticketdeck.size() - i)) + position;
             if (rand < 0)
                 rand = 0;
             Ticketdeck.set(position, Ticketdeck.get(rand));
