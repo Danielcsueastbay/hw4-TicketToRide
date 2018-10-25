@@ -11,9 +11,7 @@ import java.util.ArrayList;
  * @author Daniel
  */
 public class TicketCardDeck {
-    //skelly code
     public ArrayList<TicketCard> Ticketdeck = new ArrayList();    //ticket cards deck
-    //public static TicketCard[] Ticketdeck = new TicketCard[16];
     public TicketCardDeck() {
         // create ticket cards and ticket deck
         Ticketdeck.add( 0, new TicketCard(0, 1, 1));
@@ -24,25 +22,28 @@ public class TicketCardDeck {
         Ticketdeck.add( 5, new TicketCard(2, 3, 1));
         Ticketdeck.add( 6, new TicketCard(2, 4, 1));
         Ticketdeck.add( 7, new TicketCard(3, 4, 1));
-
-        //TicketCard.TicketCard(3, 4, 14, true);
     }
     public TicketCard drawTicketCard(){
         //draw 1 cards from ticket deck and return ticketcard
+        //0 is top of deck, ticketdeck.size()-1 is bottom of deck
         TicketCard card = Ticketdeck.get(0);
         Ticketdeck.remove(0);
         return card;
     }
+    public void addTicketDeck(TicketCard tc) {
+        //put ticket card from hand and add it to bottom of ticket deck
+        Ticketdeck.add(tc);
+}
     public void shuffleTicketdeck(){
-        TicketCard [] temp = new TicketCard[1];
-        temp[0] = Ticketdeck.get(0);
+        //shuffle Ticketdeck
+        TicketCard temp = Ticketdeck.get(0);
         int position = 0, rand;
         for (int i = 1; i < (Ticketdeck.size()-1); i++){
-            rand = ((int) (Math.random() * 100) % (16 - i)) + position;
+            rand = ((int) (Math.random() * 100) % (Ticketdeck.size() - position)) + position;
             if (rand < 0)
                 rand = 0;
             Ticketdeck.set(position, Ticketdeck.get(rand));
-            Ticketdeck.set(rand, temp[0]);
+            Ticketdeck.set(rand, temp);
             position++;
         }
     }
