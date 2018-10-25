@@ -12,12 +12,16 @@ import java.util.ArrayList;
  * @author Daniel
  */
 public class DiscardPile {
-    public ArrayList <TrainCard> discarded = new ArrayList();  //discarded cards list created/ininlalized
+    public ArrayList <TicketCard> discarded = new ArrayList();  //discarded cards list created/ininlalized
     
     public void add(TrainCardDeck tcd) {
         //put all discarded train cards back to train card deck when train deck is empty
         for (TrainCard tc : discarded){
             tcd.Traindeck.add(tc);
+            discarded.remove(0);
+        }
+        for (TrainCard tr : discarded){
+            discarded.remove(0);
         }
     }
     
@@ -26,6 +30,9 @@ public class DiscardPile {
         for (TrainCard tc : discard){
             discarded.add(tc);
         }     
+    }
+    public TrainCard getDiscardPile(){
+        return discarded;
     }
 }
 
