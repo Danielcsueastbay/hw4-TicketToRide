@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author Daniel
  */
 public class DiscardPile {
+    
     public ArrayList <TicketCard> discarded = new ArrayList();  //discarded cards list created/ininlalized
     
     public void add(TrainCardDeck tcd) {
