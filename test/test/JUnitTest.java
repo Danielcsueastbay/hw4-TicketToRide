@@ -5,6 +5,9 @@
  */
 package test;
 
+import Model.DiscardPile;
+import Model.TicketCard;
+import Model.TicketCardDeck;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,7 +20,9 @@ import static org.junit.Assert.*;
  * @author Daniel
  */
 public class JUnitTest {
-    //skelly code
+    //DiscardPile dp;
+    TicketCard tc = new TicketCard();
+    TicketCardDeck tcd = new TicketCardDeck();
     public JUnitTest() {
     }
     
@@ -31,6 +36,7 @@ public class JUnitTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -41,22 +47,28 @@ public class JUnitTest {
     // The methods must be annotated with annotation @Test. For example:
 
     @Test
-    public void add() {
+    public void addTicketDecktest() {
         //TicketCardDeck.java 
-        //test if amount of ticket cards returned to bottom of ticket deck is 0-2
-         
+        //test if ticket deck recieved the ticket card added to bottom of deck
+        tc = new TicketCard(4,5,6);
+         tcd.addTicketDeck(tc);
+         assertEquals(true, tcd.Ticketdeck.contains(tc));
     }
+    @Test
+    public void drawTicketCardtest() {
+        //TicketCardDeck.java 
+        //test if the top ticket card in deck is removed from the deck
+        tc = new TicketCard(4,5,7);
+        tcd.Ticketdeck.set(0, tc);
+        tcd.drawTicketCard();
+        assertEquals(false, tcd.Ticketdeck.contains(tc));
+    }
+    /*
+    //cant test for DiscardPile.java yet b/c our code aren't merged yet
     @Test
     public void add1() {
         //DiscardPile.java
         //test if discarded traincard array is empty
-        
-    }
-    @Test
-    public void add2() {
-        //DiscardPile.java
-        //test if train cards deck recieved the discarded train cards from discard pile
-
         
     }
     @Test
@@ -71,7 +83,7 @@ public class JUnitTest {
         //test if removed train card is in discard pile 
         
     }
-
+*/
     
     
     
