@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class DiscardPile {
     
-    public ArrayList <TicketCard> discarded = new ArrayList();  //discarded cards list created/ininlalized
+    public ArrayList <TrainCard> discarded = new ArrayList();  //discarded cards list created/ininlalized
     
     public void add(TrainCardDeck tcd) {
         //put all discarded train cards back to train card deck when train deck is empty
